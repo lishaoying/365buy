@@ -1,0 +1,5 @@
+.bigImg{width:150px;height:150px;}
+.p1,.p2{display: inline-block;width: 28px;height: 16px;margin: 0 2px;overflow: hidden;background-repeat: no-repeat;line-height: 100px;font-size: 0;
+    margin-bottom: -3px;}
+.name{font-size: 12px;padding: 0 20px 0 20px;}
+.price{color: red;font-size: 15px;font-weight: bold;}

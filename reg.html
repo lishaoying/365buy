@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    //创建XmlHttpRequest对象，不同的浏览器该对象的名称不同
+    function newObject(){
+        if(window.XMLHttpRequest){//非IE浏览器支持
+            request=new XMLHttpRequest();
+        }else if(window.ActiveXObject){//微软的IE浏览器支持
+            request=new ActiveXObject("Microsoft.XMLHttp");
+        }
+       //监听消息；当对象的状态发生了变化，到press函数去处理，这很类似于Java的事件处理
+        request.onreadystatechange=press;
+        //通过这句话将用户名发送到服务器端的验证程序
+        request.open("GET","ValiUser.bin?username="+form1.username.value,true);
+        request.send();
+        
+        //接收到服务器传送过来的消息后的响应程序
+        function press(){
+            if(request.readyState==4){
+                if(request.status==200){
+                   alert(request.responseText);
+                }
+            }
+        }
+    }
+</script>
+<body>
+<h1>用户注册</h1>
+<form action="Regc.bin" method="POST" name="form1">
+    用户名<input type="text" name="username" onblur="newObject()"/><br/>
+    密码<input type="password" name="password"/><br/>
+    确认密码<input type="password" name="password2"/><br/>
+    邮箱<input type="text" name="email"/><br/>
+    验证码<input type="text" name="vali"/>
+    <img id="im" src="Vali.bin" width="80" height="25" onclick="this.src=this.src+'?'+Math.random();"/>
+    看不清？<a href="javascript:im.src=im.src+'?'+Math.random();">换一个</a><br/>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>

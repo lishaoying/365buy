@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+
+  <display-name>Welcome to Tomcat</display-name>
+  <description>
+     Welcome to Tomcat
+  </description>
+
+  <servlet>
+   <servlet-name>Loginc</servlet-name>
+   <servlet-class>com.lsy.Loginc</servlet-class>
+  </servlet>  
+  <servlet-mapping>
+   <servlet-name>Loginc</servlet-name>
+   <url-pattern>/Loginc.bin</url-pattern>
+  </servlet-mapping>
+
+   <servlet>
+   <servlet-name>Regc</servlet-name>
+   <servlet-class>com.lsy.Regc</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>Regc</servlet-name>
+   <url-pattern>/Regc.bin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+   <servlet-name>ValiUser</servlet-name>
+   <servlet-class>com.lsy.ValiUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>ValiUser</servlet-name>
+   <url-pattern>/ValiUser.bin</url-pattern>
+  </servlet-mapping>
+
+   <servlet>
+   <servlet-name>Vali</servlet-name>
+   <servlet-class>com.lsy.Vali</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>Vali</servlet-name>
+   <url-pattern>/Vali.bin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>show</servlet-name>
+    <servlet-class>com.lsy.Products</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>show</servlet-name>
+    <url-pattern>/show.bin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Prodata</servlet-name>
+    <servlet-class>com.lsy.Prodata</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Prodata</servlet-name>
+    <url-pattern>/Prodata.bin</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>data</servlet-name>
+    <servlet-class>com.lsy.DataBase</servlet-class>
+    <init-param>
+       <param-name>driver</param-name>
+       <param-value>org.gjt.mm.mysql.Driver</param-value>
+    </init-param>
+    <init-param>
+       <param-name>url</param-name>
+       <param-value>jdbc:mysql://127.0.0.1:3306/365buy</param-value>
+    </init-param>
+    <init-param>
+       <param-name>user</param-name>
+       <param-value>root</param-value>
+    </init-param>
+    <init-param>
+       <param-name>password</param-name>
+       <param-value>123456</param-value>
+    </init-param>
+   <load-on-startup>10</load-on-startup>
+  </servlet>
+  
+</web-app>
